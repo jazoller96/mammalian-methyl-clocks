@@ -193,14 +193,14 @@ fun_llin.trans.param <- Vectorize(function(maturity, max) {
 #'
 #' @details The Log-Linear v2 transformation of age is defined as \deqn{LLin2Age
 #'   = \left\{ \begin{array}{cl}
-#'   \log\left(\frac{Age+2*gestation}{maturity+2*gestation}\right) & , \ Age
-#'   \leq maturity \\ \frac{Age-maturity}{maturity+2*gestation} & , \ Age \geq
-#'   maturity \end{array} \right. .}
+#'   \log\left(\frac{Age+gestation}{1.5*maturity+gestation}\right) & , \ Age
+#'   \leq 1.5*maturity \\ \frac{Age-1.5*maturity}{1.5*maturity+gestation} & , \
+#'   Age \geq 1.5*maturity \end{array} \right. .}
 #'
 #'   The inverse of the Log-Linear v2 transformation of age is defined as
-#'   \deqn{Age = \left\{ \begin{array}{cl} (maturity+2*gestation)*e^{LLin2Age} -
-#'   2*gestation & , \ LLin2Age \leq 0 \\ (maturity+2*gestation)*LLin2Age +
-#'   maturity & , \ LLin2Age \geq 0 \end{array} \right. .}
+#'   \deqn{Age = \left\{ \begin{array}{cl} (1.5*maturity+gestation)*e^{LLin2Age}
+#'   - gestation & , \ LLin2Age \leq 0 \\ (1.5*maturity+gestation)*LLin2Age +
+#'   1.5*maturity & , \ LLin2Age \geq 0 \end{array} \right. .}
 #'
 #' @return A numeric, the transformed or inverse-transformed value of the input.
 #' @examples
@@ -213,21 +213,21 @@ fun_llin.trans.param <- Vectorize(function(maturity, max) {
 #' @export
 fun_llin2.trans <- Vectorize(function(x, maturity, gestation) {
   if (is.na(x) | is.na(maturity) | is.na(gestation)) {return(NA)}
-  k <- 2*gestation
+  k <- gestation
   y <- 0
   if (x <= -k) {return(NA)}
-  if (x < maturity) {y = log((x+k)/(maturity+k))}
-  else {y = (x-maturity)/(maturity+k)}
+  if (x < 1.5*maturity) {y = log((x+k)/(1.5*maturity+k))}
+  else {y = (x-1.5*maturity)/(1.5*maturity+k)}
   return(y)
 })
 #' @export
 #' @rdname fun_llin2.trans
 fun_llin2.inv <- Vectorize(function(y, maturity, gestation) {
   if (is.na(y) | is.na(maturity) | is.na(gestation)) {return(NA)}
-  k <- 2*gestation
+  k <- gestation
   x <- 0
-  if (y < 0) {x = (maturity+k)*exp(y)-k}
-  else {x = (maturity+k)*y+maturity}
+  if (y < 0) {x = (1.5*maturity+k)*exp(y)-k}
+  else {x = (1.5*maturity+k)*y+1.5*maturity}
   return(x)
 })
 
