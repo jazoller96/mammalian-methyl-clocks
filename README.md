@@ -4,9 +4,9 @@ Coefficients and age transformations for many mammalian and other intrinsic epig
 ## Summary of available clocks
 | File with Clock Coefficients | Inverse Age Transformation | Parameter 1 | Parameter 2 | Source Paper |
 | :--- | :---: | :---: | :---: | :--- |
-| [Bats (Skin) Clocks](ClockCoefficients/Bats_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
-| [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Barratclough2021_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
-| [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Robeck2021_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
+| [Bats (Skin) Clocks](ClockCoefficients/Bats_ClockCoef.CombinedWithAnnotation.csv) | All use ``fun_sqrt.inv()`` | -- | -- | [Wilkinson, 2022, Nature Communications](https://doi.org/10.1038/s41467-022-33102-5) |
+| [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Barratclough2021_ClockCoef.CombinedWithAnnotation.csv) | -- | -- | -- | [Barratclough, 2021, Journal of Zoological and Botanical Gardens](https://doi.org/10.3390/jzbg2030030) |
+| [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Robeck2021_ClockCoef.CombinedWithAnnotation.csv) | All use ``fun_llin2.inv()`` | Age of Sexual Maturity ( TODO ) | Gestation Time ( TODO ) | [Robeck, 2021, Frontiers in Marine Science](https://doi.org/10.3389/fmars.2021.713373) |
 | [Cat + Human-Cat (Blood) Clocks](ClockCoefficients/Cat-HumanCat_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
 | [Cattle + Human-Cattle (Blood,Oocyte) Clocks](ClockCoefficients/Cattle-HumanCattle_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
 | [Cetacean (Blood,Skin) Clocks](ClockCoefficients/UNPUB_Cetacean_ClockCoef.Combined.csv) |  |  |  |  |
@@ -22,7 +22,7 @@ Coefficients and age transformations for many mammalian and other intrinsic epig
 | [Marmoset + Human-Marmoset (Blood) Clocks](ClockCoefficients/Marmoset-HumanMarmoset_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
 | [Marmot (Blood) Clock](ClockCoefficients/Marmot_ClockCoef.csv) |  |  |  |  |
 | [Naked Mole Rat + Human-Naked Mole Rat (Pan-Tissue) Clocks](ClockCoefficients/NakedMoleRat-HumanNakedMoleRat_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
-| [Odontocete (Blood,Skin) Clocks](ClockCoefficients/Odontocete_ClockCoef.Combined.csv) | fun_llin2.inv() |  |  |  |
+| [Odontocete (Blood,Skin) Clocks](ClockCoefficients/Odontocete_ClockCoef.Combined.csv) | All use ``fun_llin2.inv()`` | Age of Sexual Maturity ( TODO ) | Gestation Time ( TODO ) | [Robeck, 2021, Communications Biology](https://doi.org/10.1038/s42003-021-02179-x) |
 | [Peromyscus (deer mice) + Human-Peromyscus (Brain,Liver,Tail) Clocks](ClockCoefficients/Peromyscus-HumanPeromyscus_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
 | [Pig + Human-Pig (Pan-Tissue) Clocks](ClockCoefficients/Pig-HumanPig_ClockCoef.CombinedWithAnnotation.csv) |  |  |  |  |
 | [Pinniped (Blood,Skin) Clocks](ClockCoefficients/Pinniped_ClockCoef.Combined.csv) |  |  |  |  |
