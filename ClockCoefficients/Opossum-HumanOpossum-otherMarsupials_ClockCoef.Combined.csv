@@ -1,4 +1,4 @@
-"var","OpossumPanTissue","HumanOpossumAgeLogLinear","HumanOpossumRelativeAge","TasmanianDevilEar","MacropusBlood","RedKangarooBlood"
+"var","Coef.OpossumPanTissue","Coef.HumanOpossumAgeLogLinear","Coef.HumanOpossumRelativeAge","Coef.TasmanianDevilEar","Coef.MacropusBlood","Coef.RedKangarooBlood"
 "(Intercept)",6.72677169014995,10.4842064743931,1.73113130626002,26.6980765509195,18.5198649669514,22.7211499418376
 "cg09351648",NA,NA,NA,NA,-1.88379138457693,-1.35250865961121
 "cg00559067",NA,NA,NA,NA,4.48430917296842,2.4515386983953
