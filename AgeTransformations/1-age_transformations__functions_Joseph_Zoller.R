@@ -70,6 +70,33 @@ fun_log.trans <- function(x, ...) log(x+1)
 #' @rdname fun_log.trans
 fun_log.inv <- function(y, ...) exp(y)-1
 
+#' Logarithmic v2 Transformation and Inverse
+#' @description Apply the logarithmic transformation to age, or undo the
+#'   logarithmic transformation to calculate DNAm age.
+#'
+#' @param x Numeric, the age in years
+#' @param y Numeric, the transformed value of age (the un-transformed age is in
+#'   years)
+#' @param ... A catch-all for extra arguments (which will not be used) to allow
+#'   pipeline functions to always pass 2 parameters into age transformation
+#'   functions
+#'
+#' @details The logarithmic transformation of age is defined as \deqn{Log2Age =
+#'   log(Age+0.5)} The inverse of the logarithmic transformation of age is defined
+#'   as \deqn{Age = exp(Log2Age)-0.5}
+#'
+#' @return A numeric, the transformed or inverse-transformed value of the input.
+#' @examples
+#' fun_log.trans(1)
+#' fun_log.trans(c(1,2,1))
+#' fun_log.inv(1)
+#' fun_log.inv(c(1,2,1))
+#' @export
+fun_log2.trans <- function(x, ...) log(x+0.5)
+#' @export
+#' @rdname fun_log2.trans
+fun_log2.inv <- function(y, ...) exp(y)-0.5
+
 #' Relative Age Transformation and Inverse
 #' @description Convert age into relative age, or convert relative age into age.
 #'
