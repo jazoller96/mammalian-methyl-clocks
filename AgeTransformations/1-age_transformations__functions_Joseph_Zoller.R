@@ -368,4 +368,55 @@ fun_llinreladult.inv <- Vectorize(function(y, maturity, gestation) {
   return(x)
 })
 
+#' Log-Linear Mouse-Specific Transformation and Inverse
+#' @description Apply the Log-Linear Mouse-Specific transformation to age, or
+#'   undo the Log-Linear Mouse-Specific transformation to calculate DNAm age.
+#'
+#'   This is the transformation used to parameterize the all of the Mouse clocks
+#'   (Mozhui et. al., 2022).
+#'
+#' @param x Numeric, the age in years
+#' @param y Numeric, the transformed value of age (the un-transformed age is in
+#'   years)
+#' @param ... A catch-all for extra arguments (which will not be used) to allow
+#'   pipeline functions to always pass 2 parameters into age transformation
+#'   functions
+#'
+#' @details The Log-Linear Mouse-Specific transformation of age is defined as
+#'   \deqn{LLinMouseAge
+#'   = \left\{ \begin{array}{cl} \log\left(x+0.06\right) &
+#'   , \ Age \leq 1.2 \\ \frac{x-1.2}{1.26} + log(1.26) & , \ Age \geq
+#'   1.2 \end{array} \right. .}
+#'
+#'   The inverse of the Log-Linear Mouse-Specific transformation of age is
+#'   defined as
+#'   \deqn{Age = \left\{ \begin{array}{cl} (0)*e^{LLinMouseAge} - 0 & ,
+#'   \ LLinMouseAge \leq 0 \\ (0)*LLinMouseAge + 0 & , \ LLinMouseAge \geq
+#'   0 \end{array} \right. .}
+#'
+#' @return A numeric, the transformed or inverse-transformed value of the input.
+#' @examples
+#' fun_llinmouse.trans(1)
+#' fun_llinmouse.trans(c(1,2,1))
+#' fun_llinmouse.inv(1)
+#' fun_llinmouse.inv(c(1,2,1))
+#' @export
+fun_llinmouse.trans <- Vectorize(function(x, ...) {
+  if (is.na(x)) {return(NA)}
+  y <- 0
+  if (x <= -0.06) {return(NA)}
+  if (x < 1.2) {y = log(x+0.06)}
+  else {y = (x-1.2)/(1.26) + log(1.26)}
+  return(y)
+})
+#' @export
+#' @rdname fun_llinmouse.trans
+fun_llinmouse.inv <- Vectorize(function(y, ...) {
+  if (is.na(y)) {return(NA)}
+  x <- 0
+  if (exp(y) < 1.26) {x = exp(y)-0.06}
+  else {x = 1.26*(y-log(1.26))+1.2}
+  return(x)
+})
+
 
