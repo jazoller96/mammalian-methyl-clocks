@@ -5,7 +5,7 @@ Coefficients and age transformations for many mammalian and other intrinsic epig
 The table below provides a convenient summary of all of the epigenetic clocks shared within this repository.  In order to correctly apply a specific epigenetic clock, you will want to extract the correct column from the corresponding coefficient (.csv) file.  After taking the weighted sum of methylation values in each of your samples (and including the Intercept term), you must apply the appropriate inverse age transformation to the weighted sum, in order to correctly calculate the DNAm age prediction.  If the age transformation is parameterized by species information, then these parameters will be provided in the columns "Parameter 1" and "Parameter 2".  If no inverse age transformation is NOT specified, then nothing needs to be done.
 
 ## Table: Summary of available clocks
-| File with Clock Coefficients | Inverse Age Transformation | Parameter 1 | Parameter 2 | Source Paper |
+| File with Clock Coefficients (and list of tissues for which clocks are applicable) | Inverse Age Transformation | Parameter 1 | Parameter 2 | Source Paper |
 | :--- | :---: | :---: | :---: | :--- |
 | [Bats (Skin) Clocks](ClockCoefficients/Bats_Coef.CombAnn.csv) | All use ``fun_sqrt.inv()`` | -- | -- | [Wilkinson, 2022, Nature Communications](https://doi.org/10.1038/s41467-022-33102-5) |
 | [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Barratclough2021_Coef.CombAnn.csv) | -- | -- | -- | [Barratclough, 2021, Journal of Zoological and Botanical Gardens](https://doi.org/10.3390/jzbg2030030) |
