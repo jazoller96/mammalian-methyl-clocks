@@ -3,7 +3,7 @@ Coefficients and age transformations for many mammalian and other intrinsic epig
 
 ## Installing the R package
 To install the ``MammalMethylClock`` R package, follow these simple steps:
-1.  Download the R package's binary file from the github here: [MammalMethylClock_1.0.0.tgz](MammalMethylClock-Package/MammalMethylClock_1.0.0.tgz)
+1.  Download the R package's binary file from the github here (select the arrow symbol): [MammalMethylClock_1.0.0.tgz](MammalMethylClock-Package/MammalMethylClock_1.0.0.tgz)
 2.  Open RStudio or R
 3.  Enter ``install.packages("~/Downloads/MammalMethylClock_1.0.0.tgz", repos = NULL, type = "win.binary")`` into the R terminal
 
