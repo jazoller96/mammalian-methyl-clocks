@@ -7,6 +7,8 @@ To install the ``MammalMethylClock`` R package, follow these simple steps:
 2.  Open RStudio or R
 3.  Enter ``install.packages("~/Downloads/MammalMethylClock_1.0.0.tgz", repos = NULL, type = "win.binary")`` into the R terminal
 
+To begin using the R package, remember to load it with ``library(MammalMethylClock)``
+
 ## Important remark regarding applying clocks
 The table below provides a convenient summary of all of the epigenetic clocks shared within this repository.  In order to correctly apply a specific epigenetic clock, you will want to extract the correct column from the corresponding coefficient (.csv) file.  After taking the weighted sum of methylation values in each of your samples (and including the Intercept term), you must apply the appropriate inverse age transformation to the weighted sum, in order to correctly calculate the DNAm age prediction.  If the age transformation is parameterized by species information, then these parameters will be provided in the columns "Parameter 1" and "Parameter 2".  If the inverse age transformation is NOT specified, then nothing needs to be done.
 
