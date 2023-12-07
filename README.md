@@ -9,10 +9,10 @@ To install the ``MammalMethylClock`` R package, follow these simple steps:
 
 To begin using the R package, remember to load it with ``library(MammalMethylClock)``
 
-## Tutorial/Example Data: Universal Clock Training Set
+## Tutorial Vignettes & Example Data
 The data published by the [Mammalian Methylation Consortium](https://mydata.clockfoundation.org/app/mammalian-consortium-data-browser), which includes the data used for creating the Universal mammalian clocks ([Lu, 2023, Nature Aging](https://doi.org/10.1038/s43587-023-00462-6)), is available through their online browser.
 
-A small subset of this data is available in the [TutorialData](TutorialData) folder for users to use for testing, under the names ``methdatConsortium_subset`` (beta values) and ``infoConsortium`` (sample metadata).  This data is also used in the tutorial vignettes, which demonstrate the recommended pipeline of basic functions provided by this R package.  Simply type `vignette("start", package="MammalMethylClock")`, `vignette("apply", package="MammalMethylClock")`, or `vignette("build", package="MammalMethylClock")`.
+A small subset of this data is available in the [TutorialData](TutorialData) folder for users to use for testing, under the names ``methdatConsortium_subset`` (beta values) and ``infoConsortium`` (sample metadata).  This data is also used in the tutorial vignettes, which demonstrate the recommended pipelines of basic functions provided by this R package.  Simply type `browseVignettes("MammalMethylClock")` to access all of them.
 
 ## Important remark regarding applying clocks
 The table below provides a convenient summary of all of the epigenetic clocks shared within this repository.  In order to correctly apply a specific epigenetic clock, you will want to extract the correct column from the corresponding coefficient (.csv) file.  After taking the weighted sum of methylation values in each of your samples (and including the Intercept term), you must apply the appropriate inverse age transformation to the weighted sum, in order to correctly calculate the DNAm age prediction.  If the age transformation is parameterized by species information, then these parameters will be provided in the columns "Parameter 1" and "Parameter 2".  If the inverse age transformation is NOT specified, then nothing needs to be done.
