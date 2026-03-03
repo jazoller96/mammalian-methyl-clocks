@@ -20,6 +20,7 @@ The table below provides a convenient summary of all of the epigenetic clocks sh
 ## Table: Summary of available clocks
 | File with Clock Coefficients (and list of tissues for which at least one clock is applicable) | Inverse Age Transformation | Parameter 1 | Parameter 2 | Source Paper |
 | :--- | :---: | :---: | :---: | :--- |
+| [Axolotl (All) Clocks](ClockCoefficients/Axolotl_Coef.CombAnn.csv) | All use ``fun_log2.inv()`` | -- | -- | [PUBLISHED SOON]() |
 | [Bats (Skin) Clocks](ClockCoefficients/Bats_Coef.CombAnn.csv) | All use ``fun_sqrt.inv()`` | -- | -- | [Wilkinson, 2022, Nature Communications](https://doi.org/10.1038/s41467-022-33102-5) |
 | [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Barratclough2021_Coef.CombAnn.csv) | -- | -- | -- | [Barratclough, 2021, Journal of Zoological and Botanical Gardens](https://doi.org/10.3390/jzbg2030030) |
 | [Bottlenose Dolphin (Blood,Skin) Clocks](ClockCoefficients/Bottlenose_Robeck2021_Coef.CombAnn.csv) | All use ``fun_llin2.inv()`` | (Age of Sexual Maturity) <br /> 8.93 | (Gestation Time) <br /> 1.03 | [Robeck, 2021, Frontiers in Marine Science](https://doi.org/10.3389/fmars.2021.713373) |
